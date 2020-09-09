@@ -1,0 +1,13 @@
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.category %></p>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<hr />
+<h3>Reviews</h3>
+<% if (@review) %>
+<p><%= "#{@review.content} | #{@review.rating} out of 5 stars" %></p>
+<% end %>
+
+<hr />
+<%= link_to 'Write a review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+<%= link_to 'Back', restaurants_path, class:"btn btn-secondary" %>
